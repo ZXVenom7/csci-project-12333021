@@ -4,6 +4,8 @@ Luxury Motor Sport is a React single-page application for a high-end car dealers
 
 ## Live Deployment
 
+Live site: https://csci-project-12333021.vercel.app
+
 This project is configured for Vercel deployment.
 
 - Framework preset: Create React App
