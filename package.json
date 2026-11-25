@@ -1,30 +1,65 @@
 {
-  "name": "proj",
+  "name": "luxury-motor-sport",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@aws-sdk/client-s3": "^3.1177.0",
     "@testing-library/dom": "^10.4.1",
     "@testing-library/jest-dom": "^6.9.1",
     "@testing-library/react": "^16.3.2",
     "@testing-library/user-event": "^13.5.0",
+    "bcryptjs": "^3.0.3",
+    "cookie-parser": "^1.4.7",
+    "cors": "^2.8.6",
+    "dotenv": "^18.0.10",
+    "express": "^5.3.0",
+    "helmet": "^8.3.0",
+    "jsonwebtoken": "^9.0.3",
+    "multer": "^2.5.0",
+    "pg": "^8.23.1",
     "react": "^19.2.8",
     "react-dom": "^19.2.8",
+    "react-router-dom": "^6.30.6",
     "react-scripts": "5.0.1",
-    "web-vitals": "^2.1.4"
+    "sharp": "^0.35.5",
+    "web-vitals": "^2.1.4",
+    "zod": "^4.6.7"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "lint": "eslint src --ext .js,.jsx",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
-    "eject": "react-scripts eject"
+    "lint": "eslint src server api --ext .js,.jsx",
+    "eject": "react-scripts eject",
+    "server": "node --watch server/index.js",
+    "dev": "concurrently -n api,web -c yellow,cyan \"npm run server\" \"npm start\"",
+    "start:prod": "NODE_ENV=production node server/index.js",
+    "db:migrate": "node server/db/migrate.js",
+    "db:seed": "node server/scripts/seed.js",
+    "admin:create": "node server/scripts/create-admin.js",
+    "test:api": "node --test server/tests/api.test.js"
   },
   "eslintConfig": {
     "extends": [
       "react-app",
       "react-app/jest"
+    ],
+    "overrides": [
+      {
+        "files": [
+          "server/**/*.js",
+          "api/**/*.js"
+        ],
+        "env": {
+          "node": true
+        },
+        "parserOptions": {
+          "sourceType": "script"
+        },
+        "rules": {
+          "strict": "off"
+        }
+      }
     ]
   },
   "browserslist": {
@@ -40,6 +75,11 @@
     ]
   },
   "devDependencies": {
+    "concurrently": "^10.0.7",
     "gh-pages": "^6.3.0"
+  },
+  "proxy": "http://localhost:4000",
+  "engines": {
+    "node": ">=20"
   }
 }

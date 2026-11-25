@@ -395,3 +395,429 @@ select:focus {
     grid-template-columns: 1fr;
   }
 }
+
+/* ------------------------------------------------------------------ */
+/* Additions for the database-driven site. Same palette as above.     */
+/* ------------------------------------------------------------------ */
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+a {
+  color: #d4af37;
+}
+
+a.tab-btn {
+  text-decoration: none;
+  text-align: center;
+}
+
+:focus-visible {
+  outline: 2px solid #f3e5ab;
+  outline-offset: 2px;
+}
+
+textarea {
+  font: inherit;
+  width: 100%;
+  padding: 0.6rem;
+  background-color: #000;
+  color: #fff;
+  border: 1px solid #444;
+  border-radius: 6px;
+  margin-top: 0.25rem;
+  resize: vertical;
+}
+
+textarea:focus {
+  outline: none;
+  border-color: #d4af37;
+}
+
+.submit-btn:disabled {
+  opacity: 0.6;
+  cursor: wait;
+}
+
+.link-btn {
+  display: inline-block;
+  text-decoration: none;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+}
+
+.text-btn {
+  background: none;
+  border: none;
+  color: #d4af37;
+  font-weight: bold;
+  cursor: pointer;
+  padding: 0.6rem 0;
+  text-decoration: underline;
+}
+
+.text-btn:disabled {
+  color: #666;
+  cursor: default;
+  text-decoration: none;
+}
+
+.error-alert {
+  background-color: #2e1a1a;
+  color: #f3b0a8;
+  border: 1px solid #a8483c;
+  padding: 0.75rem;
+  border-radius: 6px;
+  margin-bottom: 1rem;
+}
+
+.field-error {
+  color: #f3b0a8;
+  font-size: 0.8rem;
+  margin: 0.3rem 0 0;
+}
+
+.hp-field {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.multiline {
+  white-space: pre-line;
+}
+
+/* Inventory cards */
+a.image-container {
+  display: block;
+  text-decoration: none;
+  border-radius: 12px 12px 0 0;
+}
+
+.image-placeholder {
+  width: 100%;
+  height: 100%;
+  min-height: 220px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #777;
+  background-color: #0f0f0f;
+  font-size: 0.9rem;
+}
+
+.car-header h3 a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.car-header h3 a:hover {
+  color: #d4af37;
+}
+
+.price-stack {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.2rem;
+  flex-shrink: 0;
+}
+
+.previous-price {
+  color: #888;
+  font-size: 0.8rem;
+}
+
+.discount-badge {
+  background-color: #000;
+  color: #d4af37;
+  border: 1px solid #d4af37;
+}
+
+.spec-link {
+  grid-column: 1 / -1;
+  font-weight: bold;
+  text-decoration: none;
+  padding-top: 0.25rem;
+}
+
+.spec-link:hover {
+  color: #f3e5ab;
+}
+
+.featured-block {
+  margin-bottom: 2.5rem;
+  padding-bottom: 2.5rem;
+  border-bottom: 1px solid #333;
+}
+
+/* Search, sort and filters */
+.inventory-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  align-items: stretch;
+}
+
+.inventory-toolbar input,
+.inventory-toolbar select {
+  margin-top: 0;
+  height: 100%;
+}
+
+.toolbar-search {
+  flex: 1 1 260px;
+}
+
+.toolbar-sort {
+  flex: 0 1 220px;
+}
+
+.toolbar-toggle {
+  width: auto;
+  gap: 0.75rem;
+  flex: 0 0 auto;
+}
+
+.filter-panel {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+  gap: 1rem;
+  margin-top: 0.75rem;
+  padding: 1rem;
+  background: #171717;
+  border: 1px solid #333;
+  border-radius: 12px;
+}
+
+.filter-actions {
+  display: flex;
+  align-items: flex-end;
+}
+
+.empty-state {
+  margin-top: 1.5rem;
+  text-align: center;
+}
+
+.pagination {
+  justify-content: center;
+  align-items: center;
+  gap: 0.4rem;
+  margin: 2.5rem 0 1rem;
+}
+
+.page-btn {
+  background-color: #222;
+  border: 1px solid #444;
+  color: #d4af37;
+  font-weight: bold;
+  padding: 0.5rem 0.85rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s, border-color 0.2s;
+}
+
+.page-btn:hover:not(:disabled) {
+  background-color: #333;
+  border-color: #d4af37;
+}
+
+.page-btn.active {
+  background-color: #d4af37;
+  border-color: #d4af37;
+  color: #000;
+}
+
+.page-btn:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+
+.page-gap {
+  color: #777;
+  padding: 0 0.25rem;
+}
+
+/* Vehicle detail page */
+.back-link {
+  display: inline-block;
+  margin-bottom: 1.25rem;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.back-link:hover {
+  color: #f3e5ab;
+}
+
+.detail-top {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+  gap: 2rem;
+  align-items: start;
+}
+
+.detail-image {
+  position: relative;
+  aspect-ratio: 3 / 2;
+  background-color: #000;
+  border: 1px solid #333;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.detail-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.detail-thumbs {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(84px, 1fr));
+  gap: 0.5rem;
+  margin-top: 0.75rem;
+}
+
+.detail-thumbs button {
+  padding: 0;
+  aspect-ratio: 3 / 2;
+  background: #000;
+  border: 2px solid #333;
+  border-radius: 6px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: border-color 0.2s;
+}
+
+.detail-thumbs button:hover,
+.detail-thumbs button.active {
+  border-color: #d4af37;
+}
+
+.detail-thumbs img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.detail-summary {
+  background: #171717;
+  border: 1px solid #333;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(212, 175, 55, 0.15);
+  padding: 1.5rem;
+}
+
+.detail-summary h2 {
+  margin: 0 0 1rem;
+  color: #fff;
+  font-size: 1.5rem;
+}
+
+.detail-price {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1.25rem;
+}
+
+.detail-price .car-price {
+  font-size: 1.15rem;
+  padding: 0.4rem 1rem;
+}
+
+.discount-note {
+  color: #d4af37;
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+.detail-specs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.6rem 1rem;
+  font-size: 0.9rem;
+  padding: 1rem;
+  background-color: #0f0f0f;
+  border: 1px solid #2a2a2a;
+  border-radius: 6px;
+}
+
+.detail-box {
+  max-width: none;
+  margin-top: 2rem;
+}
+
+.detail-box form {
+  max-width: 700px;
+}
+
+.form-switch {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 1.25rem;
+}
+
+.form-switch .tab-btn {
+  border-color: #444;
+}
+
+.whatsapp-btn {
+  display: inline-block;
+  margin-top: 1.25rem;
+  padding: 0.7rem 1.25rem;
+  border: 1px solid #d4af37;
+  border-radius: 6px;
+  background-color: #222;
+  color: #d4af37;
+  font-weight: bold;
+  text-decoration: none;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.whatsapp-btn:hover {
+  background-color: #d4af37;
+  color: #000;
+}
+
+@media (max-width: 860px) {
+  .detail-top {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .price-stack {
+    align-items: flex-start;
+  }
+
+  .detail-specs {
+    grid-template-columns: 1fr;
+  }
+
+  .toolbar-sort,
+  .toolbar-toggle {
+    flex: 1 1 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
